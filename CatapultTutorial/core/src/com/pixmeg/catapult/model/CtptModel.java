@@ -10,8 +10,8 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class CtptModel implements InputProcessor {
-    private static final float MAX_STRENGTH = 100;
-    private static final float MAX_DISTANCE = 100;
+    private static final float MAX_STRENGTH = 80;
+    private static final float MAX_DISTANCE = 10;
 
     private Viewport viewport;
 
@@ -26,11 +26,11 @@ public class CtptModel implements InputProcessor {
         this.viewport = viewport;
 
         Box2D.init();
-        world = new World(new Vector2(0, -10), true);
+        world = new World(new Vector2(0, -50), true);
 
         bodyFactory = BodyFactory.getInstance(world);
 
-        anchor = new Vector2(200,240);
+        anchor = new Vector2(10,10);
         firingPosition = anchor.cpy();
     }
 
@@ -68,7 +68,7 @@ public class CtptModel implements InputProcessor {
     }
 
     public void createBall() {
-        Body body = bodyFactory.makeCircleBody(anchor.x, anchor.y, 10, BodyDef.BodyType.DynamicBody);
+        Body body = bodyFactory.makeCircleBody(anchor.x, anchor.y, 1, BodyDef.BodyType.DynamicBody);
 
         float velX = MAX_STRENGTH * MathUtils.cos(angle) * distance/MAX_DISTANCE;
         float velY = MAX_STRENGTH * MathUtils.sin(angle) * distance/MAX_DISTANCE;
