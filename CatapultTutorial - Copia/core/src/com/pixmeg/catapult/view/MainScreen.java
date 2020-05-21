@@ -6,7 +6,10 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
@@ -29,19 +32,23 @@ public class MainScreen implements Screen {
     private Hud hud;
 
 
+
     public MainScreen(CatapultTutorial catapultTutorial) {
         parent = catapultTutorial;
 
         camera = new OrthographicCamera();
         //viewport = new ExtendViewport(50, 50, camera);
         viewport = new ExtendViewport (CatapultTutorial.V_WIDTH,CatapultTutorial.V_HEIGHT, camera);
+
         renderer = new ShapeRenderer();
         hud = new Hud(parent.batch);
 
-
         model = new CtptModel(viewport);
         debugRenderer = new Box2DDebugRenderer();
+
     }
+
+
 
     @Override
     public void resize(int width, int height) {

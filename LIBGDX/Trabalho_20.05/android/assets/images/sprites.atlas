@@ -1,0 +1,145 @@
+sprites.png
+size: 506, 1048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+lata
+  rotate: false
+  xy: 249, 0
+  size: 71, 90
+  orig: 71, 90
+  offset: 0, 0
+  index: -1
+lata2
+  rotate: false
+  xy: 180, 91
+  size: 65, 121
+  orig: 65, 121
+  offset: 0, 0
+  index: -1
+lata3
+  rotate: false
+  xy: 0, 91
+  size: 56, 102
+  orig: 56, 102
+  offset: 0, 0
+  index: -1
+lata4
+  rotate: false
+  xy: 129, 91
+  size: 51, 120
+  orig: 51, 120
+  offset: 0, 0
+  index: -1
+papel
+  rotate: false
+  xy: 106, 228
+  size: 157, 148
+  orig: 157, 148
+  offset: 0, 0
+  index: -1
+papel2
+  rotate: false
+  xy: 320, 0
+  size: 186, 91
+  orig: 186, 91
+  offset: 0, 0
+  index: -1
+papel3
+  rotate: false
+  xy: 400, 91
+  size: 84, 137
+  orig: 84, 137
+  offset: 0, 0
+  index: -1
+papel4
+  rotate: false
+  xy: 89, 0
+  size: 160, 85
+  orig: 160, 85
+  offset: 0, 0
+  index: -1
+papel5
+  rotate: false
+  xy: 0, 228
+  size: 106, 141
+  orig: 106, 141
+  offset: 0, 0
+  index: -1
+plastico
+  rotate: false
+  xy: 354, 91
+  size: 46, 135
+  orig: 46, 135
+  offset: 0, 0
+  index: -1
+plastico2
+  rotate: false
+  xy: 366, 228
+  size: 121, 168
+  orig: 121, 168
+  offset: 0, 0
+  index: -1
+plastico3
+  rotate: false
+  xy: 245, 91
+  size: 109, 134
+  orig: 109, 134
+  offset: 0, 0
+  index: -1
+tc1
+  rotate: false
+  xy: 200, 721
+  size: 200, 327
+  orig: 200, 327
+  offset: 0, 0
+  index: -1
+tc2
+  rotate: false
+  xy: 0, 721
+  size: 200, 326
+  orig: 200, 326
+  offset: 0, 0
+  index: -1
+tc3
+  rotate: false
+  xy: 0, 396
+  size: 200, 325
+  orig: 200, 325
+  offset: 0, 0
+  index: -1
+tc4
+  rotate: false
+  xy: 200, 396
+  size: 200, 325
+  orig: 200, 325
+  offset: 0, 0
+  index: -1
+vidro
+  rotate: false
+  xy: 56, 91
+  size: 73, 106
+  orig: 73, 106
+  offset: 0, 0
+  index: -1
+vidro2
+  rotate: false
+  xy: 0, 0
+  size: 89, 80
+  orig: 89, 80
+  offset: 0, 0
+  index: -1
+vidro3
+  rotate: false
+  xy: 313, 228
+  size: 53, 151
+  orig: 53, 151
+  offset: 0, 0
+  index: -1
+vidro4
+  rotate: false
+  xy: 263, 228
+  size: 50, 148
+  orig: 50, 148
+  offset: 0, 0
+  index: -1

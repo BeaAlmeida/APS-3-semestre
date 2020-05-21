@@ -6,8 +6,10 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Box2D;
+import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.pixmeg.catapult.controller.CatapultTutorial;
 
 public class CtptModel implements InputProcessor {
     private static final float MAX_STRENGTH = 80;
@@ -22,6 +24,8 @@ public class CtptModel implements InputProcessor {
     public Vector2 firingPosition;
     private float distance, angle;
 
+    Body bodys;
+
     public CtptModel(Viewport viewport) {
         this.viewport = viewport;
 
@@ -32,10 +36,26 @@ public class CtptModel implements InputProcessor {
 
         anchor = new Vector2(10,10);
         firingPosition = anchor.cpy();
+
+        createFloor();
     }
 
     public void logicStep(float delta) {
         world.step(1/60f, 3, 3);
+    }
+
+    public void createFloor(){
+        BodyDef bodyDef = new BodyDef();
+        bodyDef.type = BodyDef.BodyType.StaticBody;
+        bodyDef.position.set(CatapultTutorial.V_WIDTH / 2, 0);
+
+        bodys = world.createBody(bodyDef);
+
+        PolygonShape shape = new PolygonShape();
+        shape.setAsBox(CatapultTutorial.V_WIDTH, 1);
+        bodys.createFixture(shape, 0.0f);
+
+        shape.dispose();
     }
 
     private float angleBetweenTwoPoints(){
