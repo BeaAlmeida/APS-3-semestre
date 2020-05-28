@@ -10,11 +10,13 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
+import com.recicle.game.GameModel;
 import com.recicle.game.MainClass;
-import com.recicle.game.Model;
+
 
 public class Hud implements Disposable {
-    private MainClass parent;
+    private static MainClass parent;
+
     private ExtendViewport viewport;
     public Stage stage;
     SpriteBatch batch;
@@ -62,14 +64,19 @@ public class Hud implements Disposable {
         score +=  10;
         worldTimer += 2;
 
+        if (parent.preferences.isSoundEnabled()) GameModel.playSound(GameModel.CORRECT);
     }
+
     public static void subScore(){
         score -= 10;
 
+        if (parent.preferences.isSoundEnabled()) GameModel.playSound(GameModel.WRONG);
     }
+
 
     public void update(float dt) {
         timeCount += dt;
+
         if (timeCount >= 1) {
             if (worldTimer > 0) {
                 worldTimer--;
@@ -77,20 +84,17 @@ public class Hud implements Disposable {
                 timeCount = 0;
             }
         }
-        if (worldTimer <= 0){
+
+        if (worldTimer <= 0) {
             System.out.println("Time out!");
             parent.changeScreen(MainClass.ENDGAME);
-            parent.playScreen.model.trashBodies[parent.playScreen.model.index].setType(BodyDef.BodyType.DynamicBody);
             worldTimer = TIME;
             score = 0;
-
         }
-        //if (worldTimer == 10) parent.playScreen.model.playSound(Model.TICTAC);
 
         if(score < 0) score = 0;
 
         scoreLabel.setText(String.format("%06d", score));
-
     }
 
     public int getScore(){

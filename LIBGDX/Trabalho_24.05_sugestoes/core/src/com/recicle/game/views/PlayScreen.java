@@ -13,13 +13,9 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
-import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.codeandweb.physicseditor.PhysicsShapeCache;
-import com.recicle.game.Model;
+import com.recicle.game.GameModel;
 import com.recicle.game.MainClass;
 
 import java.util.HashMap;
@@ -36,7 +32,7 @@ public class PlayScreen implements Screen {
     static final float SCALE = 0.05f;
 
     private MainClass parent; // a field to store our orchestrator
-    public  Model model;
+    public GameModel model;
 
     private OrthographicCamera cam;
     private FitViewport viewport;
@@ -63,10 +59,9 @@ public class PlayScreen implements Screen {
 
         batch = new SpriteBatch(); //A SpriteBatch is used to make the rendering of lots of images happen all at once
         renderer = new ShapeRenderer();
-        //atlas = new TextureAtlas("images/sprites.atlas");
 
         parent = mainClass;
-        model = new Model(viewport, batch, parent.assetsManager);
+        model = new GameModel(viewport, batch, parent.assetsManager);
 
 
         backgroundImage = new Texture("images/bg.png");
@@ -89,7 +84,7 @@ public class PlayScreen implements Screen {
         debugRenderer = new Box2DDebugRenderer(true,true,true,true,true,true);
     }
 
-    public void addSprites() {
+    private void addSprites() {
         Array<TextureAtlas.AtlasRegion> regions = atlas.getRegions();
 
         for (TextureAtlas.AtlasRegion region : regions) {
@@ -105,7 +100,7 @@ public class PlayScreen implements Screen {
         }
     }
 
-    public void drawSprite(String name, float x, float y, float degrees) {
+    private void drawSprite(String name, float x, float y, float degrees) {
         Sprite sprite = sprites.get(name);
 
         sprite.setPosition(x, y);
@@ -130,7 +125,7 @@ public class PlayScreen implements Screen {
         System.out.println(disposableBodies.toString());
         for (Body body : disposableBodies) {
             if (body.getUserData() == "PAPEL" || body.getUserData() == "PLASTICO" || body.getUserData() == "LATA" || body.getUserData() == "VIDRO") {
-                if (isDeletedBody(body) == false) {
+                if (!isDeletedBody(body)) {
                     model.world.destroyBody(body);
                 }
             }
@@ -152,29 +147,27 @@ public class PlayScreen implements Screen {
         model.logicStep(delta);
 
         batch.begin();
-
+        //Background
         batch.draw(backgroundImage, 0, 0, V_WIDTH, V_HEIGHT);
 
+        //Lixeiras
         batch.draw(tcBTex, model.trashCanB.getPosition().x - (model.TRASH_CAN_WIDTH / 2), model.trashCanB.getPosition().y - (model.TRASH_CAN_HEIGHT / 2), model.TRASH_CAN_WIDTH , model.TRASH_CAN_HEIGHT );
         batch.draw(tcRTex, model.trashCanR.getPosition().x - (model.TRASH_CAN_WIDTH / 2), model.trashCanR.getPosition().y - (model.TRASH_CAN_HEIGHT / 2), model.TRASH_CAN_WIDTH , model.TRASH_CAN_HEIGHT );
         batch.draw(tcYTex, model.trashCanY.getPosition().x - (model.TRASH_CAN_WIDTH / 2), model.trashCanY.getPosition().y - (model.TRASH_CAN_HEIGHT / 2), model.TRASH_CAN_WIDTH , model.TRASH_CAN_HEIGHT );
         batch.draw(tcGTex, model.trashCanG.getPosition().x - (model.TRASH_CAN_WIDTH / 2), model.trashCanG.getPosition().y - (model.TRASH_CAN_HEIGHT / 2), model.TRASH_CAN_WIDTH , model.TRASH_CAN_HEIGHT );
 
+        //Catapult
         batch.draw(robozin, model.anchor.x - (model.anchor.x / 2) - 5, model.anchor.y - (model.anchor.y / 2) - 1, 15, 15);
 
-
+        //Lixos
         for (int i = 0; i < model.trashBodies.length; i++) {
-
             Body body = model.trashBodies[model.index];
             String name = model.names[model.index];
             Vector2 position = body.getPosition();
             float degrees = (float) Math.toDegrees(body.getAngle());
 
             drawSprite(name, position.x, position.y, degrees);
-
         }
-
-        //batch.draw(bracoRobozin, model.firingPosition.x, model.firingPosition.y, model.anchor.x, model.anchor.y, 1, model.distanceBetweenTwoPoints(), 1.5f, 1.5f, model.anchor.angle(model.firingPosition));
 
         batch.end();
 
@@ -187,15 +180,7 @@ public class PlayScreen implements Screen {
         update(delta);
         parent.hud.stage.draw();
 
-        debugRenderer.render(model.world, cam.combined);
-
-        //delete the bodies and remove from arrayList
-//        if(toBeDeletedBodies != null) {
-//            for (Body ballBody : toBeDeletedBodies) {
-//                toBeDeletedBodies.removeValue(ballBody, true);
-//                model.world.destroyBody(ballBody);
-//            }
-//        }
+        //debugRenderer.render(model.world, cam.combined);
 
     }
 

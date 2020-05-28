@@ -10,7 +10,7 @@ import com.recicle.game.views.MenuScreen;
 import com.recicle.game.views.PreferencesScreen;
 
 public class MainClass extends Game {
-	//A game class is used to delegate between different screens
+	//Essa classe é utilizada principalmente para transmitir de uma tela para outra
 
 
 	public LoadingScreen loadingScreen;

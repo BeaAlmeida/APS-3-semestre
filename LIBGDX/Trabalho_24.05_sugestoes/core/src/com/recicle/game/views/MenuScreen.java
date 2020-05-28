@@ -42,7 +42,7 @@ public class MenuScreen implements Screen {
         parent.assetsManager.manager.finishLoading();
         skin = parent.assetsManager.manager.get("skin/uiskin.json");
 
-        parent.assetsManager.queueAddMusic();;
+        parent.assetsManager.queueAddMusic();
         parent.assetsManager.manager.finishLoading();
 
         themeSong = parent.assetsManager.manager.get("music/theme.mp3");
@@ -62,7 +62,6 @@ public class MenuScreen implements Screen {
         Table table = new Table(skin);
         table.setFillParent(true);
         table.background("window");
-
         stage.addActor(table);
 
         Label titleLabel = new Label("*** THE RECICLE GAME ***", skin, "optional" );

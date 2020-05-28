@@ -15,12 +15,6 @@ public class BodyFactory {
     private static BodyFactory thisInstance;
     private World world;
 
-    public static final int STEEL = 0;
-    public static final int WOOD = 1;
-    public static final int RUBBER = 2;
-    public static final int STONE = 3;
-
-    private final float DEGTORAD = 0.0174533f;
 
     private BodyFactory(World world){ this.world = world; }
 

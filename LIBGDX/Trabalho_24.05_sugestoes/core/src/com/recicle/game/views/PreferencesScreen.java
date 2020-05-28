@@ -150,6 +150,7 @@ public class PreferencesScreen implements Screen {
         if (parent.preferences.isMusicEnabled() == false) MenuScreen.themeSong.pause();
         else MenuScreen.themeSong.play();
 
+
         stage.act(Math.min(Gdx.graphics.getDeltaTime(), 1 / 30f));
         stage.draw();
     }
