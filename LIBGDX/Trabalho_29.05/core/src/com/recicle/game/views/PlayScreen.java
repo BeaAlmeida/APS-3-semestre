@@ -154,7 +154,10 @@ public class PlayScreen implements Screen {
         for (int i = 0; i < model.trashBodies.length; i++) {
             Body body = model.trashBodies[model.index];
 
-            if (!body.isAwake()) addDeletedBody(body);
+            if (!body.isAwake()) {
+                addDeletedBody(body);
+                Hud.subScore();
+            }
             else {
                 String name = model.names[model.index];
                 Vector2 position = body.getPosition();
