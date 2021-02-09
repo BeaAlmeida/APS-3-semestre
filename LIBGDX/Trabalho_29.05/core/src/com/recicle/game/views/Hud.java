@@ -65,7 +65,7 @@ public class Hud implements Disposable {
     }
 
     public static void subScore(){
-        score -= 10;
+        //score -= 10;
 
         if (parent.preferences.isSoundEnabled()) GameModel.playSound(GameModel.WRONG);
     }

@@ -153,10 +153,10 @@ public class GameModel implements InputProcessor {
                 tictac.play();
                 break;
             case CORRECT:
-                correct.play();
+                correct.play(0.5f);
                 break;
             case WRONG:
-                wrong.play();
+                wrong.play(0.5f);
                 break;
 
         }
