@@ -1,0 +1,166 @@
+sprites.png
+size: 902, 1174
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+braco
+  rotate: false
+  xy: 635, 0
+  size: 42, 119
+  orig: 42, 119
+  offset: 0, 0
+  index: -1
+lata1
+  rotate: false
+  xy: 249, 0
+  size: 71, 90
+  orig: 71, 90
+  offset: 0, 0
+  index: -1
+lata2
+  rotate: false
+  xy: 728, 0
+  size: 65, 121
+  orig: 65, 121
+  offset: 0, 0
+  index: -1
+lata3
+  rotate: false
+  xy: 506, 0
+  size: 56, 102
+  orig: 56, 102
+  offset: 0, 0
+  index: -1
+lata4
+  rotate: false
+  xy: 677, 0
+  size: 51, 120
+  orig: 51, 120
+  offset: 0, 0
+  index: -1
+papel1
+  rotate: false
+  xy: 236, 134
+  size: 157, 148
+  orig: 157, 148
+  offset: 0, 0
+  index: -1
+papel2
+  rotate: false
+  xy: 320, 0
+  size: 186, 91
+  orig: 186, 91
+  offset: 0, 0
+  index: -1
+papel3
+  rotate: false
+  xy: 46, 134
+  size: 84, 137
+  orig: 84, 137
+  offset: 0, 0
+  index: -1
+papel4
+  rotate: false
+  xy: 89, 0
+  size: 160, 85
+  orig: 160, 85
+  offset: 0, 0
+  index: -1
+papel5
+  rotate: false
+  xy: 130, 134
+  size: 106, 141
+  orig: 106, 141
+  offset: 0, 0
+  index: -1
+pilha
+  rotate: false
+  xy: 300, 747
+  size: 400, 427
+  orig: 400, 427
+  offset: 0, 0
+  index: -1
+plastico1
+  rotate: false
+  xy: 0, 134
+  size: 46, 135
+  orig: 46, 135
+  offset: 0, 0
+  index: -1
+plastico2
+  rotate: false
+  xy: 496, 134
+  size: 121, 168
+  orig: 121, 168
+  offset: 0, 0
+  index: -1
+plastico3
+  rotate: false
+  xy: 793, 0
+  size: 109, 134
+  orig: 109, 134
+  offset: 0, 0
+  index: -1
+robo
+  rotate: false
+  xy: 617, 134
+  size: 200, 213
+  orig: 200, 213
+  offset: 0, 0
+  index: -1
+tc1
+  rotate: false
+  xy: 0, 347
+  size: 300, 400
+  orig: 300, 400
+  offset: 0, 0
+  index: -1
+tc2
+  rotate: false
+  xy: 300, 347
+  size: 300, 400
+  orig: 300, 400
+  offset: 0, 0
+  index: -1
+tc3
+  rotate: false
+  xy: 600, 347
+  size: 300, 400
+  orig: 300, 400
+  offset: 0, 0
+  index: -1
+tc4
+  rotate: false
+  xy: 0, 747
+  size: 300, 400
+  orig: 300, 400
+  offset: 0, 0
+  index: -1
+vidro1
+  rotate: false
+  xy: 562, 0
+  size: 73, 106
+  orig: 73, 106
+  offset: 0, 0
+  index: -1
+vidro2
+  rotate: false
+  xy: 0, 0
+  size: 89, 80
+  orig: 89, 80
+  offset: 0, 0
+  index: -1
+vidro3
+  rotate: false
+  xy: 443, 134
+  size: 53, 151
+  orig: 53, 151
+  offset: 0, 0
+  index: -1
+vidro4
+  rotate: false
+  xy: 393, 134
+  size: 50, 148
+  orig: 50, 148
+  offset: 0, 0
+  index: -1

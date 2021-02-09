@@ -1,0 +1,4 @@
+#Wed Sep 23 23:45:02 BRT 2020
+base.0=C\:\\Users\\SuperCat\\Documents\\UNIP\\3Sem\\APS-3-semestre\\LIBGDX\\Trabalho_29.05\\android\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
